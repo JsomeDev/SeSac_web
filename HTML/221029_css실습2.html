@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <style>
+      img {
+        width: 200px;
+        height: 100px;
+        top: 100px;
+        position: relative;
+      }
+
+      #img1 {
+        transform: skewY(15deg);
+        left: 90px;
+        top: 150px;
+      }
+
+      #img2 {
+        transform: skewY(15deg);
+        z-index: -2;
+        left: -20px;
+        top: 110px;
+      }
+
+      #img3 {
+        transform: skewY(15deg);
+        z-index: -5;
+        left: -130px;
+        top: 90px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img id="img1" src="/ocean.jpg" alt="ocean" />
+    <img id="img2" src="/marvel/comic.jpg" alt="comics" />
+    <img id="img3" src="/marvel/ds3.jpg" alt="spider" />
+  </body>
+</html>
