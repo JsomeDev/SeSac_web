@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        position: absolute;
+      }
+
+      #a1 {
+        background-color: indianred;
+      }
+
+      #a2 {
+        background-color: aqua;
+        left: 100px;
+        position: relative;
+      }
+
+      #a3 {
+        background-color: thistle;
+        position: absolute;
+        left: 10px;
+      }
+
+      #a4 {
+        background-color: yellowgreen;
+        position: fixed;
+        left: 50px;
+        bottom: 10px;
+      }
+
+      #a5 {
+        background-color: red;
+      }
+      #a6 {
+        background-color: orange;
+        left: 50px;
+      }
+      #a7 {
+        background-color: yellow;
+        z-index: 10;
+        left: 100px;
+      }
+      #a8 {
+        background-color: green;
+        left: 150px;
+      }
+      #a9 {
+        background-color: blue;
+        left: 180px;
+        z-index: -100;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="a1"></div>
+    <div id="a2">
+      <div id="a3"></div>
+    </div>
+    <div id="a4"></div>
+    <div id="a5"></div>
+    <div id="a6"></div>
+    <div id="a7"></div>
+    <div id="a8"></div>
+    <div id="a9"></div>
+  </body>
+</html>
