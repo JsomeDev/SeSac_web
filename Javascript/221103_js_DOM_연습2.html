@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script>
+      function imgChange() {
+        var tag = document.querySelector("img");
+        console.log(tag);
+        console.log(tag.src);
+        console.log(tag.width);
+        tag.src = "/images/latte.jpg"; //이미지 변경 가능
+      }
+
+      function add() {
+        var li = document.createElement("li"); // <태그> 새롭게 추가
+        li.innerText = "새로운 li";
+        console.log(li);
+
+        var ul = document.querySelector("ul");
+
+        // ul.append(li);
+        // ul에 자식 요소로 li 추가. 한번 추가할 때 여러개를 넣을 수 있음.
+        ul.appendChild(li);
+        //  한번 추가할 때 한개의 자식만 추가할 수 있다.
+      }
+
+      function remove() {
+        // 내 자신 선택해서 삭제하기
+        var li = document.querySelector("li");
+        li.remove(); // 가장 위에있는 li가 삭제된다.
+
+        //부모 요소 선택해서 삭제하기 - 부모요소.removeChild(자식요소)
+        var ul = document.querySelector("ul");
+        var li2 = document.querySelector("li");
+        ul.removeChild(li2);
+        // li.parentElement.removeChild(li);
+      }
+    </script>
+  </head>
+
+  <body>
+    <img src="/images/image.png" width="100" height="100" />
+    <button type="button" onclick="imgChange()">이미지 변경</button>
+
+    <ul>
+      <li>이름</li>
+    </ul>
+
+    <button type="button" onclick="add()">추가</button>
+    <button type="button" onclick="remove()">삭제</button>
+  </body>
+</html>

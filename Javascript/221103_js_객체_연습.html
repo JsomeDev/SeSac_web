@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <script>
+      var cat = {
+        name: "나비",
+        age: 1,
+        meow: function () {
+          return "야옹";
+        },
+      };
+
+      console.log(cat);
+      console.log(cat.name);
+      console.log(cat.meow());
+
+      function hello() {
+        return "안녕";
+      }
+
+      function hi() {
+        console.log("hi");
+      }
+
+      console.log(hi());
+      var a = hello();
+      console.log(a);
+
+      var arr1 = [1, 2, 3, "a", "b", "c"];
+      var arr2 = new Array(1, 2, 3, "a", "b");
+      console.log(arr1[0]);
+      console.log(arr1);
+      console.log(arr2);
+      console.log(arr1.indexOf("a"));
+      console.log("length : " + arr1.length);
+
+      arr1.push("d"); // 가장 마지막에 요소 추가
+      console.log(arr1);
+
+      arr1.pop(); // 가장 마지막 요소 제거
+      console.log(arr1);
+
+      console.log(arr1[2]);
+
+      arr1.unshift("0"); //가장 앞의 요소 추가
+      console.log(arr1);
+      console.log(arr1[2]);
+
+      arr1.shift(); // 가장 앞의 요소 제거
+      console.log(arr1);
+      console.log(arr1[2]);
+
+      var me = {
+        name: "som",
+        birth: "1115",
+      };
+
+      console.log(me);
+      console.log(me["name"]);
+      console.log(me.name);
+
+      me["gener"] = "F";
+      me["age"] = 10;
+      console.log(me);
+
+      //정리
+      var a = [1, 2];
+      //배열에서 값을 가져온은 방법은 index 기반
+      console.log(a[0]);
+
+      console.log("--------------------");
+      var date = new Date();
+      console.log(date);
+
+      console.log(date.getYear());
+      console.log(date.getMonth());
+      console.log(date.getDate());
+      console.log(date.getDay()); //요일: 일-월-화-수-목-금-토에서 오늘은 몇 인덱스인지, 0부터 시작
+      console.log(date.getTime()); // 1970-1-1일부터 지금까지의 밀리세컨드
+      console.log(date.getHours());
+
+      console.log("--------------------");
+
+      console.log(Math.min()); // 전달받은 값 중 최소값을 반환
+      console.log(Math.min(-20, 2, 10));
+      console.log(Math.min(0, "a", 5));
+
+      console.log(Math.max(-20, 2, 10));
+      console.log(Math.random());
+      var min = 1;
+      var max = 10;
+      console.log(Math.random() * (max - min) + min);
+
+      console.log(Math.round(1.2));
+      console.log(Math.round(-1.7));
+
+      console.log(Math.floor(1.9));
+      console.log(Math.ceil(1.1));
+    </script>
+  </head>
+  <body></body>
+</html>

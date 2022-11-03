@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script>
+      function calculate() {
+        var val1 = parseInt(document.querySelector("#val1").value);
+        var val2 = parseInt(document.getElementById("val2").value);
+        var cal = document.getElementById("val3").value;
+        var total = document.getElementById("val4").value;
+
+        if (cal == "+") {
+          document.getElementById("val4").value = val1 + val2;
+        } else if (cal == "-") {
+          total = val1 - val2;
+          document.getElementById("val4").value = val1 - val2;
+        } else if (cal == "*") {
+          total = val1 * val2;
+          document.getElementById("val4").value = val1 * val2;
+        } else if (cal == "/") {
+          total = val1 / val2;
+          document.getElementById("val4").value = val1 / val2;
+        } else {
+          document.getElementById("val4").value = "계산할 수 없습니다.";
+        }
+      }
+
+      function reset() {
+        document.querySelector("input").value = null;
+        document.getElementById("val2").value = null;
+        document.getElementById("val3").value = null;
+        document.getElementById("val4").value = null;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <label for="val1">값1: </label>
+      <input type="number" id="val1" />
+    </div>
+    <div>
+      <label for="val2">값2: </label>
+      <input type="number" id="val2" />
+    </div>
+    <div>
+      <label for="val3">연산자: </label>
+      <input type="text" id="val3" />
+    </div>
+    <div>
+      <label for="val4">결과: </label>
+      <input type="text" id="val4" />
+    </div>
+    <br />
+    <button type="button" onclick="calculate()">계산하기</button>
+    <button type="button" onclick="reset()">초기화</button>
+  </body>
+</html>
