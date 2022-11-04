@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Order your Pizza!</title><link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nanum Gothic', sans-serif;
+            
+        }
+
+        input {
+            accent-color:#ffbe0b;
+        }
+
+        legend {
+            font-size:30px;
+            font-weight: bold;
+            background-color: #ffbe0b;
+        }
+
+    </style>
+
+    <script>
+      var price = 20000;
+      function sumPrice(obj) {
+        if (obj.checked) price = price + Number(obj.value);
+        else price = price - Number(obj.value);
+
+        var total = document.querySelector("#total-price");
+        total.innerText = price + "원";
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>피자 주문</h1>
+    <fieldset>
+      <legend>사이즈</legend>
+      <p>레귤러 사이즈 - 20000원</p>
+      <input
+        type="checkbox"
+        id="medium"
+        value="4000"
+        onclick="sumPrice(this)"
+      />
+      <label for="medium">사이즈업 (+4000원) </label>
+      <div>
+     
+    </fieldset>
+    <br />
+    <fieldset>
+      <legend>추가 주문</legend>
+      <input type="checkbox" id="pickle" value="800" onclick="sumPrice(this)" />
+      <label for="pickle">피클(800원)</label>
+
+      <input type="checkbox" id="chili" value="300" onclick="sumPrice(this)" />
+      <label for="chili">칠리(300원)</label>
+
+      <input
+        type="checkbox"
+        id="dipping"
+        value="200"
+        onclick="sumPrice(this)"
+      />
+      <label for="dipping">디핑 소스 (200원)</label>
+
+      <input
+        type="checkbox"
+        id="cheese-stick"
+        value="4800"
+        onclick="sumPrice(this)"
+      />
+      <label for="cheese-stick">치즈스틱 (4개, 4800원)</label>
+
+      <input
+        type="checkbox"
+        id="cheese-ball"
+        value="5000"
+        onclick="sumPrice(this)"
+      />
+
+      <label for="cheese-ball">치즈볼 (5개, 5000원)</label>
+
+      <input
+        type="checkbox"
+        id="corn-salad"
+        value="2400"
+        onclick="sumPrice(this)"
+      />
+      <label for="corn-salad">콘 샐러드 (2400원)</label>
+    </fieldset>
+    <br />
+
+    <fieldset>
+      <legend>합계</legend>
+      <strong><p id="total-price"></p></strong>
+    </fieldset>
+  </body>
+
+
+</html>
