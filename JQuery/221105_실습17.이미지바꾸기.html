@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./jquery-ui-1.13.2/jquery-ui.css"></script>
+    <script src="./jquery-ui-1.13.2/jquery-ui.js"></script>
+  </head>
+
+  <style>
+    img {
+      width: 500px;
+      height: 500px;
+    }
+  </style>
+
+  <script>
+    function apple() {
+      $("#div").html('<img src="./images/apple.jpg">');
+    }
+
+    function banana() {
+      $("#div").html('<img src="./images/banana.jpeg">');
+    }
+
+    function grape() {
+      $("#div").html('<img src="./images/grape.jpg">');
+    }
+
+    function peach() {
+      $("#div").html('<img src="./images/peach.jpg">');
+    }
+  </script>
+
+  <body>
+    <div>
+      <div
+        id="div"
+        style="height: 500px; width: 500px; border: 1px solid"
+      ></div>
+      <br />
+      <div>
+        <button id="btn1" type="button" onclick="apple()">사과</button>
+        <button id="btn2" type="button" onclick="banana()">바나나</button>
+        <button id="btn3" type="button" onclick="grape()">포도</button>
+        <button id="btn4" type="button" onclick="peach()">복숭아</button>
+      </div>
+    </div>
+  </body>
+</html>

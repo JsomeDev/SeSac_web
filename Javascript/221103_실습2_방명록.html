@@ -38,8 +38,8 @@
         var year = userDate.getFullYear();
         var month = userDate.getMonth() + 1;
         var date = userDate.getDate();
-        var hours = userDate.getHours();
-        var minutes = userDate.getMinutes();
+        var hours = String(userDate.getHours()).padStart(2, "0");
+        var minutes = String(userDate.getMinutes()).padStart(2, "0");
 
         var newtr = document.createElement("tr");
         var td1 = document.createElement("td");
