@@ -1,0 +1,246 @@
+<html>
+  <head>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Whole Foods Market Korea</title>
+  </head>
+
+  <style>
+    body {
+      font-family: "Nanum Gothic Coding", monospace;
+      background-color: #ffffff;
+    }
+
+    .btn {
+      color: white;
+      font-size: 20px;
+    }
+
+    .card-text:hover {
+      text-shadow: 0.5px 0.5px gray;
+    }
+
+    img {
+      height: 300px;
+      object-fit: contain;
+    }
+
+    .card {
+      align-content: center;
+      border: none;
+      border-radius: 0;
+      height: 50%;
+      padding: 30px;
+      top: 100px;
+      margin-right: 30px;
+      box-shadow: 1px 1px rgb(188, 188, 188);
+    }
+  </style>
+
+  <body>
+    <nav
+      class="navbar sticky-top navbar-expand-lg p-3"
+      style="background-color: #007f5f; width: 100%"
+    >
+      <div class="container-fluid justify-content-start">
+        <button
+          onClick="location.href='wholefoodmarket_clone.html'"
+          type="button"
+          class="btn"
+        >
+          Whole Foods Market Korea
+        </button>
+        <button
+          type="button"
+          class="btn"
+          onclick="location.href='orderonline.html'"
+        >
+          온라인 주문
+        </button>
+        <button type="button" class="btn">레시피</button>
+        <button type="button" class="btn">오시는 길</button>
+      </div>
+    </nav>
+    <div>
+      <p></p>
+    </div>
+    <div class="container">
+      <div class="card-group vgr-cards">
+        <div class="card">
+          <div class="card-body">
+            <h4
+              class="card-title"
+              style="
+                font-weight: bold;
+                font-style: italic;
+                margin-top: 30px;
+                margin-bottom: 50px;
+              "
+            >
+              온라인 주문하기
+            </h4>
+            <p class="card-text">
+              &nbsp;온라인 주문을 통해 주문할 경우 다음날 아침 바로 물건을
+              받아볼 수 있습니다! <br />
+              &nbsp;배달의 민족, 요기요 어플로도 주문이 가능합니다.
+              <br />
+              &nbsp;또한 기프티콘, 기프트카드 선물을 통해 소중한 사람들과 함께
+              즐거운 시간을 보내보세요!
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-body">
+            <img class="card-img" src="deilivery.jpg" alt="Card image cap" />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">배달 어플</h4>
+            <p class="card-text">
+              Choose from hundreds of our favourite products and get them
+              delivered to your door in a flash with Deliveroo.
+            </p>
+            <a>배달의 민족</a>
+            <a href="#" class="btn btn-success">요기요</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-body">
+            <img class="card-img" src="giftcard.jpg" alt="Delivery" />
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">선물하기</h4>
+            <p class="card-text">
+              Our gift cards are the perfect gift for foodies - or even as a
+              little treat for yourself! You can now buy one of our gift cards
+              online and load it up with any amount from £5 to £500.
+            </p>
+            <a
+              href="https://wwws-uk1.givex.com/cws4.0/wfmuk/"
+              class="btn btn-success"
+              >구매하기</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer
+    class="bg-success text-center text-white"
+    style="position: fixed; left: 0; bottom: 0; width: 100%; width: 100%"
+  >
+    <div class="container p-2">
+      <section>
+        <form>
+          <div class="row d-flex justify-content-center">
+            <div class="col-auto">
+              <p class="pt-2">
+                <strong>이메일로 뉴스레터 받기</strong>
+              </p>
+            </div>
+
+            <div class="col-md-5 col-12">
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="userEmail" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-auto">
+              <button
+                type="submit"
+                class="btn btn-outline-light mt-1 btn-sm"
+                style="font-size: 14px"
+                id="subscribe"
+              >
+                구독하기
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-6 mb-2 mb-md-0">
+            <div>
+              <span>
+                <a
+                  href="https://www.instagram.com/wholefoods/?hl=en"
+                  class="text-white"
+                  >Instagram</a
+                >
+              </span>
+
+              <span>
+                <a href="https://twitter.com/wholefoods/" class="text-white"
+                  >Twitter</a
+                >
+              </span>
+              <span>
+                <a
+                  href="https://www.amazon.com/alm/storefront/ref=grocery_wholefoods?almBrandId=VUZHIFdob2xlIEZvb2Rz"
+                  class="text-white"
+                  >Amazon</a
+                >
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="text-center p-1" style="background-color: #007f5f">
+      Copyright 2022 Amazon Technologies, Inc.
+    </div>
+  </footer>
+  <script>
+    src =
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js";
+    integrity =
+      "sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3";
+    crossorigin = "anonymous";
+  </script>
+  <script>
+    $(function () {
+      $('[data-toggle="popover"]').popover();
+    });
+
+    $(document).on("click", "#subscribe", function (e) {
+      var email = $("#userEmail").val();
+      var regEmail =
+        /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+
+      if (regEmail.test(email)) {
+        swal(
+          "구독 완료",
+          "뉴스레터 구독 신청이 완료되었습니다! 감사합니다.",
+          "success"
+        );
+      } else {
+        swal("메일 형식 오류", "이메일 형식을 한번만 확인해주세요!", "error");
+      }
+    });
+  </script>
+</html>
