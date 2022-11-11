@@ -87,18 +87,19 @@
             src="Lettuce.jpg"
             class="d-block w-100 img-responsive"
             alt="Lettuce"
+            style="position: absolute; top: -9%"
           />
 
           <h3
             class="imageText"
             style="
-              top: 50%;
+              top: 40%;
               left: 50%;
               color: rgb(233, 239, 225);
               transform: translate(-50%, -50%);
               text-shadow: 1px 1px black;
               font-weight: bold;
-              font-size: 3em;
+              font-size: 2rem;
               position: absolute;
               z-index: 10;
               text-align: center;
@@ -186,7 +187,8 @@
     integrity =
       "sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3";
     crossorigin = "anonymous";
-
+  </script>
+  <script>
     swal({
       title: "반갑습니다!",
       text: "연말을 맞아 멋진 파티 음식을 준비해보세요!",
@@ -197,6 +199,8 @@
     });
 
     new fullpage("#fullpage", {
+      navigation: true,
+      keyboardScrolling: true,
       autoScrolling: true,
       scrollHorizontally: true,
       sectionsColor: ["#efefd0", "#fffcf2"],
