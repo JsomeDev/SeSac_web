@@ -16,3 +16,5 @@ function add() {
 }
 
 module.exports = add;
+
+// result = {add: function() { return a + b}}
