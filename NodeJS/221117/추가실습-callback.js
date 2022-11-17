@@ -18,26 +18,28 @@
 
 ////
 
-function call(name) {
+function call(name, cb) {
   setTimeout(function () {
     console.log("사용자는 " + name);
+    cb(name);
   }, 2000);
 }
 
-function back(b) {
+function back(b, cb) {
   setTimeout(function () {
     console.log("두번째는 back");
+    cb(b);
   }, 1000);
 }
 
-function hell(c) {
+function hell(b) {
   setTimeout(function () {
-    console.log("세번째는 " + c);
+    console.log("세번째는 hell");
   }, 500);
 }
 
 call("kim", function () {
   back(function () {
-    hell("hell");
+    hell();
   });
 });
