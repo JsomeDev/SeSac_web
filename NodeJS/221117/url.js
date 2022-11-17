@@ -8,7 +8,7 @@ const url = require("url");
 
 // console.log(obj.protocol);
 
-//var string = new url.URL("https://localhost?name=sesac");
+//var string = new url.URL("https://localhost?name=sesac&name=코딩온");
 
 console.log(string.searchParams.getAll("name"));
 console.log(string.searchParams.key());

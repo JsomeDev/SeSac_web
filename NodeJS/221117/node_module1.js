@@ -11,6 +11,8 @@ const num = require("./node_module.js");
 const a = num.a;
 const b = num.b;
 
+//cosnt {a, b} = require('./node_module.js) - 구조분해해서 가져올 수 있다.
+
 function add() {
   return a + b;
 }

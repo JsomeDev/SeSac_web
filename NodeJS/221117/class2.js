@@ -1,0 +1,10 @@
+const { Car } = require("./class.js");
+
+console.log(Car);
+//Car 기본 parameter를 항상 보내줘야함.
+var car1 = new Car("red");
+console.log(car1.returnColor());
+var car2 = new Car("blue");
+console.log(car2.returnColor());
+var car3 = new Car("yellow");
+console.log(car3.returnColor());
