@@ -21,18 +21,18 @@
 function call(name, cb) {
   setTimeout(function () {
     console.log("사용자는 " + name);
-    cb(name);
+    cb();
   }, 2000);
 }
 
-function back(b, cb) {
+function back(cb) {
   setTimeout(function () {
     console.log("두번째는 back");
-    cb(b);
+    cb();
   }, 1000);
 }
 
-function hell(b) {
+function hell(cb) {
   setTimeout(function () {
     console.log("세번째는 hell");
   }, 500);
