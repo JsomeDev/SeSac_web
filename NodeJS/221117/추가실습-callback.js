@@ -32,7 +32,7 @@ function back(cb) {
   }, 1000);
 }
 
-function hell(cb) {
+function hell() {
   setTimeout(function () {
     console.log("세번째는 hell");
   }, 500);
