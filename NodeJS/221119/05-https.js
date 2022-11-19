@@ -3,9 +3,11 @@ const fs = require("fs").promises;
 
 //1.client가 서버한테 요청: request
 //2.서버가 client한테 응답하는 내용: response
+
 const server = http.createServer(function (req, res) {
   fs.readFile("./test.html").then(function (data) {
-    res.end(data.toString()); //내용을 보내면서 응답을 끝내는 end
+    res.end(data.toString());
+    //내용을 보내면서 응답을 끝내는 end
   });
 });
 

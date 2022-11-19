@@ -59,7 +59,7 @@ login("kim", "1234")
     return getDetail(videos[0]);
   })
   .then(function (msg) {
-    console.log("msg : ", msg);
+    console.log(msg);
   });
 ///
 login("kim", "1234").then(getVideo);
