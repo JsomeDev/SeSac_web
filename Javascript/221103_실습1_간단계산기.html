@@ -5,22 +5,22 @@
         var val1 = parseInt(document.querySelector("#val1").value);
         var val2 = parseInt(document.getElementById("val2").value);
         var cal = document.getElementById("val3").value;
-        var total = document.getElementById("val4").value;
+        var total = document.getElementById("val4");
 
+        var n = 0;
         if (cal == "+") {
-          document.getElementById("val4").value = val1 + val2;
+          n = val1 + val2;
         } else if (cal == "-") {
-          total = val1 - val2;
-          document.getElementById("val4").value = val1 - val2;
+          n = val1 - val2;
         } else if (cal == "*") {
-          total = val1 * val2;
-          document.getElementById("val4").value = val1 * val2;
+          n = val1 * val2;
         } else if (cal == "/") {
-          total = val1 / val2;
-          document.getElementById("val4").value = val1 / val2;
+          n = val1 / val2;
         } else {
           document.getElementById("val4").value = "계산할 수 없습니다.";
         }
+
+        total.value = n;
       }
 
       function reset() {
