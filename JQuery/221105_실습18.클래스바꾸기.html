@@ -37,20 +37,25 @@
     <script>
       function changeColor() {
         if ($("div").hasClass("red")) {
-          $("#div1").removeClass("red");
-          $("#div1").addClass("orange");
+          $("#div1").switchClass("red", "orange");
+          // $("#div1").removeClass("red");
+          // $("#div1").addClass("orange");
         } else if ($("div").hasClass("orange")) {
-          $("#div1").removeClass("orange");
-          $("#div1").addClass("green");
+          $("#div1").switchClass("orange", "yellow");
+          // $("#div1").removeClass("orange");
+          // $("#div1").addClass("green");
         } else if ($("div").hasClass("green")) {
-          $("#div1").removeClass("green");
-          $("#div1").addClass("blue");
+          $("#div1").switchClass("yellow", "green");
+          // $("#div1").removeClass("green");
+          // $("#div1").addClass("blue");
         } else if ($("div").hasClass("blue")) {
-          $("#div1").removeClass("blue");
-          $("#div1").addClass("purple");
+          $("#div1").switchClass("blue", "purple");
+          // $("#div1").removeClass("blue");
+          // $("#div1").addClass("purple");
         } else if ($("div").hasClass("purple")) {
-          $("#div1").removeClass("purple");
-          $("#div1").addClass("red");
+          $("#div1").switchClass("purple", "red");
+          // $("#div1").removeClass("purple");
+          // $("#div1").addClass("red");
         }
       }
     </script>
