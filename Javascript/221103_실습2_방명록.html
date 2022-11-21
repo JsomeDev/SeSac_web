@@ -1,37 +1,9 @@
 <html>
-  <head> </head>
-
-  <body>
-    <p>방명록입니다.</p>
-    <div>
-      <label for="username"><strong>작성자</strong></label>
-      <input type="text" id="username" />
-    </div>
-
-    <div>
-      <label for="content"><strong>내용</strong></label>
-      <input type="text" id="content" size="100" />
-    </div>
-
-    <br />
-    <button type="button" onclick="tableWrite()">작성</button>
-
-    <table border="1" cellspacing="1" cellpadding="20">
-      <thead>
-        <tr>
-          <td>번호</td>
-          <td>작성자</td>
-          <td>내용</td>
-          <td>작성일</td>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-
+  <head>
     <script>
       function tableWrite() {
-        var userName = document.querySelector("#username");
-        var userContent = document.querySelector("#content");
+        var userName = document.querySelector("#username").value;
+        var userContent = document.querySelector("#content").value;
         var tbody = document.querySelector("tbody");
         var userDate = new Date();
 
@@ -48,8 +20,8 @@
         var td4 = document.createElement("td");
 
         td1.innerText = tbody.rows.length + 1;
-        td2.innerText = userName.value;
-        td3.innerText = userContent.value;
+        td2.innerText = userName;
+        td3.innerText = userContent;
         td4.innerText = `${year}-${month}-${date} ${hours}:${minutes}`;
 
         newtr.append(td1);
@@ -59,5 +31,41 @@
         tbody.appendChild(newtr);
       }
     </script>
+
+    <style>
+      table {
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>방명록입니다.</p>
+    <div>
+      <label for="username"><strong>작성자:</strong></label>
+      <input type="text" id="username" />
+    </div>
+
+    <div>
+      <label for="content"><strong>내용:</strong></label>
+      <input type="text" id="content" size="100" />
+    </div>
+
+    <br />
+    <button type="button" onclick="tableWrite()" style="margin-bottom: 20px">
+      작성
+    </button>
+
+    <table border="1" cellspacing="1" cellpadding="20">
+      <thead>
+        <tr>
+          <td>번호</td>
+          <td>작성자</td>
+          <td>내용</td>
+          <td>작성일</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
   </body>
 </html>
