@@ -11,7 +11,6 @@ app.use(express.json());
 app.post("/postinfo", (req,res) => {
     res.render("실습31");
     console.log(req.body);
-    
 })
 
 
