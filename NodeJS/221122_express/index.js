@@ -7,6 +7,10 @@ const port = 8080;
 app.set("view engine", "ejs");
 app.use('/views', express.static(__dirname + '/views'));
 
+app.use(express.urlencoded({extended: true})); //x-www-urlencoded 데이터 해석 
+app.use(express.json()); //json형태로 정보를 받는다.
+
+
 //클라이언트가 어떤 경로로 접근할 수 있도록 권한을 줘야함.
 //미들웨어 등록 - 가상 경로 , express.static("실제 존재 폴더이름")
 //static이라는 실제 존재하는 폴더를 public 경로로 접근할 수 있도록 함
@@ -30,11 +34,30 @@ app.get("/ejs", (req, res) => {
   });
 });
 
+
 app.get("/test", (req, res) => {
   //sendFile("절대경로")
   //__dirname : 현재 담겨있는 폴더 경로
   res.sendFile(__dirname + "/views/index.html");
 });
+
+app.get("/form", (req,res) => {
+  res.render("form");
+});
+
+app.get("/getForm", (req,res) => {
+    console.log(req.query);
+    res.send("get 요청 성공!");
+});
+
+
+app.post("/postForm", (req,res) => {
+  console.log(req.body);
+  res.render("result", {data: req.body});
+
+});
+
+
 
 //listen - 포트 번호, 함수를 인자로
 app.listen(port, () => {

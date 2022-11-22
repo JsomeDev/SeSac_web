@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>get 요청</h3>
+    <form action="/getForm" method="get" name="getform" >
+        <input type="text" name="id">
+        <input type="password" name="pw">
+
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" name="gender" value="male" id="men"><label for="men">남자</label> 
+            <input type="radio" name="gender" value="female" id="women"><label for="women">여자</label> 
+        </fieldset>
+
+        <fieldset>
+            <legend>Interest</legend>
+            <input type="checkbox" name="interest" value="netflix" />netflix
+            <input type="checkbox" name="interest" value="music" />music
+            <input type="checkbox" name="interest" value="workout" />work out
+        </fieldset>
+        
+
+        <button type="submit">제출</button>
+    </form>
+    
+    <h3>post 요청</h3>
+    <form action="/postForm" method="post" >
+        <input type="text" name="id" required>
+        <input type="password" name="pw" placeholder="password" required>
+
+        <select name="birthMonth">
+            <% for(var i = 1; i <=12 ; i++) {%>
+                <option value="<%=i%>"><%=i%>월</option>
+            <% } %>
+        </select>
+
+        <textarea name="content" rows="30" cols="50" required></textarea>
+
+        <button type="submit">제출</button>
+    </form>
+
+
+
+    <script>
+       // console.log(document.forms["getform"]);
+    </script>
+</body>
+</html>
