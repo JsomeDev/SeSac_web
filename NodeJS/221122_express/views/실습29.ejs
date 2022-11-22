@@ -7,7 +7,8 @@
     <title>Document</title>
   </head>
   <body>
-    <span style="color: blue">안녕하세요~~~~</span>
-    <img src="/static/img/christmas.jpg" alt="christmas" />
+    <% for(var i=0; i < data.length; i++) { %> 
+        <img src="/static/img/<%=data[i]%>.jpg" > 
+    <% } %>
   </body>
 </html>
