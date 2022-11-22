@@ -5,6 +5,7 @@ const app = express();
 const port = 8080;
 
 app.set("view engine", "ejs");
+app.use('/views', express.static(__dirname + '/views'));
 
 //클라이언트가 어떤 경로로 접근할 수 있도록 권한을 줘야함.
 //미들웨어 등록 - 가상 경로 , express.static("실제 존재 폴더이름")

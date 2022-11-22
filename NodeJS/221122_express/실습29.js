@@ -4,6 +4,7 @@ const port = 8080;
 
 app.set("view engine", "ejs");
 app.use("/static", express.static("static"));
+app.use('/views', express.static(__dirname + '/views'));
 
 app.get("/img", (req, res) => {
   res.render("실습29", {
