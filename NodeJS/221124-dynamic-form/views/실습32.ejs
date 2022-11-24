@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습32.axios</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      function sendGet() {
+        var form = document.getElementById("form-info");
+        axios({
+          method: "get",
+          url: "/form",
+          params: {
+            name: form.name.value,
+            gender: form.gender.value,
+            birthYear: form.birthYear.value,
+            birthMonth: form.birthMonth.value,
+            birthDate: form.birthDate.value,
+          },
+        }).then(function (res) {
+          alert(res.data.msg);
+          console.log(res.data.msg);
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <form id="form-info">
+      <label>이름</label>
+      <input type="text" required name="name" />
+
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="gender" value="Male" id="men" />
+        <label for="men">남자</label>
+        <input type="radio" name="gender" value="Female" id="women" />
+        <label for="women">여자</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="birthYear">
+          <% for(var i = 1910; i <=2010; i ++) { %>
+          <option value="<%=i%>"><%=i%>년</option>
+          <% } %>
+        </select>
+        <select name="birthMonth">
+          <% for(var i = 1; i <=12; i ++) { %>
+          <option value="<%=i%>"><%=i%>월</option>
+          <% } %>
+        </select>
+        <select name="birthDate">
+          <% for(var i = 1; i <=31 ; i ++) { %>
+          <option value="<%=i%>"><%=i%>일</option>
+          <% } %>
+        </select>
+      </fieldset>
+
+      <button type="button" onclick="sendGet()">회원가입</button>
+    </form>
+  </body>
+</html>

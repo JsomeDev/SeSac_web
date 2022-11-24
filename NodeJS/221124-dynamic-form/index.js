@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 
 app.get("/form", (req,res) => {
   console.log(req.query);
-  res.send("이름은 : " +req.query.name)
+  res.send({msg: "이름은 : " +req.query.name});
 });
 
 app.listen(port, () => {
