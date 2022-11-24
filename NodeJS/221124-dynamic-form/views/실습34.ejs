@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습34</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function sendGet() {
+        var form = document.getElementById("form-info");
+        $.ajax({
+          url: "/ajax",
+          type: "GET",
+          data: {
+            name: form.name.value,
+            gender: form.gender.value,
+            birthYear: form.birthYear.value,
+            birthMonth: form.birthMonth.value,
+            birthDate: form.birthDate.value,
+          },
+          success: function (res) {
+            alert(res.msg);
+            console.log(res.msg);
+          },
+          error: function (error) {
+            console.error(error);
+          },
+        });
+      }
+    </script>
+  </head>
+
+  <body>
+    <form id="form-info">
+      <label>이름</label>
+      <input type="text" required name="name" />
+
+      <fieldset>
+        <legend>성별</legend>
+        <input type="radio" name="gender" value="Male" id="men" />
+        <label for="men">남자</label>
+        <input type="radio" name="gender" value="Female" id="women" />
+        <label for="women">여자</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>생년월일</legend>
+        <select name="birthYear">
+          <% for(var i = 1910; i <=2010; i ++) { %>
+          <option value="<%=i%>"><%=i%>년</option>
+          <% } %>
+        </select>
+        <select name="birthMonth">
+          <% for(var i = 1; i <=12; i ++) { %>
+          <option value="<%=i%>"><%=i%>월</option>
+          <% } %>
+        </select>
+        <select name="birthDate">
+          <% for(var i = 1; i <=31 ; i ++) { %>
+          <option value="<%=i%>"><%=i%>일</option>
+          <% } %>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>관심사</legend>
+        <input type="checkbox" name="interest" value="여행" />여행
+        <input type="checkbox" name="interest" value="패션" />패션
+        <input type="checkbox" name="interest" value="음식" />음식
+      </fieldset>
+
+      <button type="button" onclick="sendGet()">회원가입</button>
+    </form>
+  </body>
+</html>

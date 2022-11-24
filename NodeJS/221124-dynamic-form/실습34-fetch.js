@@ -10,14 +10,14 @@ app.use(express.json());
 
 
 app.get("/", (req, res) => {
-  res.render("실습33");
+  res.render("실습34-fetch");
 });
 
-app.post("/form", (req,res)=> {
+app.post("/fetch", (req,res)=> {
     console.log(req.body);
     if (req.body.id == "somi" || req.body.password =="1234") {
-        res.send({msg: "login success!", color: "blue"});
-        //res.send("<p style='color:blue'>login")
+        res.send({msg: "login success!", color: "blue"}); 
+        //res.send("<p style='color:blue'>login</p>")
     } else {
         res.send({msg: "login fail!", color: "red"})
     }   

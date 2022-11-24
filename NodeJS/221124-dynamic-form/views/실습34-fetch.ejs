@@ -1,30 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>실습33</title>
-  
-    <script>
+    <title>실습34-fetch</title>
 
+    <script>
       function sendPost() {
         var form = document.getElementById("form-info");
-        axios({
-          method: "post",
-          url: "/form",
-          data: { id: form.id.value, password: form.password.value },
-        }).then(function (res) {
-            var message = document.querySelector("p")
-            message.innerText = res.data.msg;
-            message.style.color = res.data.color;
-            //document.querySelector("p")
-        });
+        var message = document.querySelector("p")
+        fetch("/fetch", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                id: form.id.value,
+                password: form.password.value
+            })
+        })
+        .then(function(response) { 
+            return( response.json());
+        })
+        .then(function(res) {
+            message.innerText = res.msg;
+            message.style.color = res.color;
+        })
       }
-
     </script>
-  </head>
+</head>
 
   <body>
     <form id="form-info">
