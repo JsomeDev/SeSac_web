@@ -4,7 +4,7 @@
     <script>
         function sendGet() {
             var form = document.getElementById("form-info");
-            //form.name.value form의 네임 속성 값을 가져올 수 있다. 
+            //form.name.value - form의 네임 속성 값을 가져올 수 있다. 
             //form.age.value
             axios({
                 method:'get',
@@ -14,8 +14,18 @@
                 //res.data = {msg: ~~~ }
                 alert(res.data.msg);
             })
-
         }
+
+        function sendPost() {
+            var form = document.getElementById("form-info");
+            axios({
+                method:'post',
+                url:"/form",
+                data: {name: form.name.value}
+            }).then(function(res) {
+                alert(res.data.msg);
+        })
+    }
     </script>
 </head>
 

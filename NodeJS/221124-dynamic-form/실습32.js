@@ -14,7 +14,8 @@ app.get("/", (req, res) => {
 
 app.get("/form", (req,res)=> {
     console.log(req.query);
-    res.send({msg: "이름 : " + req.query.name + " "
+    //data를 클라이언트로 보낼 수 있다. 
+    res.send({msg:  "이름 : " + req.query.name + " "
                     + "성별 : " + req.query.gender + " "
                     + req.query.birthYear + "년" + " "
                     + req.query.birthMonth + "월" + " "
