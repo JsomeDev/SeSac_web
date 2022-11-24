@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function sendGet() {
+            axios({
+                method:'get',
+                url:"/form",
+                params: {name: "somijoo"}
+            });
+        }
+    </script>
+</head>
+
+  <body>
+    <button type="button" onclick="sendGet()">get</button>
+    <button type="button" onclick="sendPost()">post</button>
+  </body>
+</html>
