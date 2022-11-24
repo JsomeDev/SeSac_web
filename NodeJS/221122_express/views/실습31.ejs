@@ -39,6 +39,22 @@
       </fieldset>
 
       <fieldset>
+        <legend>ID</legend>
+        <input type="text" placeholder="ID" pattern="^([a-zA-Z0-9]){6,}$" name="id">
+      </fieldset>
+
+      <fieldset>
+        <legend>Password</legend>
+        <input type="password" name="password" pattern="^([a-zA-Z\\d`~!@#$%^&*()-_=+]{8,24}$">
+      </fieldset>
+
+      <fieldset>
+        <legend>Contact</legend>
+        <input type="text" name="contact" placeholder="010-1234-5678" 
+        pattern="^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i" maxlength="13">
+      </fieldset>
+
+      <fieldset>
         <legend>관심사</legend>
         <input type="checkbox" name="interest" value="여행" />여행
         <input type="checkbox" name="interest" value="패션" />패션
@@ -55,6 +71,7 @@
           required
         />
       </fieldset>
+
 
       <fieldset>
         <legend>Favorite Color</legend>
