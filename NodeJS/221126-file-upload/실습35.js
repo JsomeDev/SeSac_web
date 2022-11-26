@@ -19,7 +19,6 @@ const upload = multer({
             done(null,'uploads/');
         },
         filename(req,file,done){
-            console.log("filename: ", req.body);
             const ext= path.extname(file.originalname);
             const filename = req.body.id + ext;
             done(null, filename);
@@ -33,11 +32,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/upload", upload.single("userfile"), (req, res) => {
-  console.log(req.file);
-  console.log(req.body);
   var file = req.file.filename
   res.render("image", {name: file})
-  
 });
 
 app.listen(port, () => {
