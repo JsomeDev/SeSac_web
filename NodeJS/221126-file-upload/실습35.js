@@ -14,26 +14,26 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const upload = multer({
-    storage: multer.diskStorage({
-        destination(req,file,done) {
-            done(null,'uploads/');
-        },
-        filename(req,file,done){
-            const ext= path.extname(file.originalname);
-            const filename = req.body.id + ext;
-            done(null, filename);
-        }
-    })   
-})
+  storage: multer.diskStorage({
+    destination(req, file, done) {
+      done(null, "uploads/");
+    },
+    filename(req, file, done) {
+      const ext = path.extname(file.originalname);
+      const filename = req.body.id + ext;
+      done(null, filename);
+    },
+  }),
+});
 
-
-app.get("/", (req, res) => {
+app.get("/upload", (req, res) => {
   res.render("실습35");
 });
 
 app.post("/upload", upload.single("userfile"), (req, res) => {
-  var file = req.file.filename
-  res.render("image", {name: file})
+  var file = req.file.filename;
+  res.render("image", { name: file });
+  //  res.render("practice-result", { path: req.file.path });
 });
 
 app.listen(port, () => {
