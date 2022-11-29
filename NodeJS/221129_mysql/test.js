@@ -7,7 +7,7 @@ const cnn = mysql.createConnection({
   database: "somdata",
 });
 
-cnn.query("select * from user order by birthday asc", (err, result) => {
+cnn.query("select * from user", (err, result) => {
   //if (err) console.log(err);
   if (err) throw err;
 
