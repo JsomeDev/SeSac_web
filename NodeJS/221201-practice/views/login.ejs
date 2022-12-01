@@ -12,7 +12,7 @@
         var form = document.getElementById("form-info");
         axios({
           method: "post",
-          url: "/form",
+          url: "/login2",
           data: { id: form.id.value, password: form.password.value },
         }).then(function (res) {
           var message = document.querySelector("p");
