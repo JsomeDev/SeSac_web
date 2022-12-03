@@ -42,3 +42,25 @@ exports.delete_visitor = (id, cb) => {
     cb();
   });
 };
+
+exports.get_visitor_by_id_model = (id, cb) => {
+  var sql = `SELECT * FROM visitor WHERE id = ${id}`;
+
+  cnn.query(sql, (err, rows) => {
+    if (err) throw err;
+
+    console.log("select by id: ", rows);
+    cb(rows[0]);
+  });
+};
+
+exports.update_visitor = (info, cb) => {
+  var sql = `UPDATE visitor SET name = '${info.name}', comment = '${info.comment}' WHERE id = ${info.id}`;
+
+  cnn.query(sql, (err, result) => {
+    if (err) throw err;
+
+    console.log("update result: ", result);
+    cb();
+  });
+};
