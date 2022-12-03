@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 const router = require("./routes");
-app.use("/visitor", router);
+app.use("/visitor", router); //미들웨어
 
 app.get("*", (req, res) => {
   res.send("주소가 존재하지 않습니다. 다시 한번 확인해주세요.");

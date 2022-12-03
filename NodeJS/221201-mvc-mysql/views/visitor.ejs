@@ -36,12 +36,33 @@
           <td><%= data[i].name %></td>
           <td><%= data[i].comment %></td>
           <td><button type="button">수정</button></td>
-          <td><button type="button">삭제</button></td>
+          <td><button type="button" onclick="delete_visitor('<%= data[i].id %>', this);">삭제</button></td>
         </tr>
       <% } %>
     </table>
 
+  <!-- 
+    RESTful api 
+    get: 데이터 조회
+    post: 데이터 insert 생성 
+    delete: 데이터 삭제
+    fetch, put: 데이터 수정 
+  -->
+
     <script>
+      function delete_visitor(delete_id, element) {
+          axios({
+            method:'delete', 
+            url: '/visitor/delete',
+            data: {id: delete_id}
+          })
+          .then((response)=> {
+            if(response.data) element.parentElement.parentElement.remove();
+            else alert("알 수 없는 오류 발생");
+          })
+      }
+
+
       function register() {
         let form = document.getElementById("form_register");
         let data = {
