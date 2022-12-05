@@ -19,31 +19,82 @@
         #btns {
             margin-top: 20px;
         }
-
     </style>
     <script>
-        
+        function editProfile() {
+            var form = document.getElementById("profile-form");
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+
+                return false;
+            }
+            let user = {
+                id: form.id.value,
+                pw: form.pw.value,
+                name: form.name.value
+            };
+
+            axios({
+                method: 'PATCH',
+                url: '/user/profile',
+                data: user
+            })
+                .then((res) => {
+                    if (res.data) {
+                        alert("We updated your profile!");
+                    } else {
+                        alert("Sorry, we couldn't update your profile.")
+                    }
+                });
+        }
+
+        function deleteProfile() {
+            var form = document.getElementById("profile-form");
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+
+                return false;
+            }
+            let user = {
+                id: form.id.value,
+            };
+
+            axios({
+                method: 'DELETE',
+                url: '/user/profile',
+                data: user
+            }).then((response) => {
+                if (response.data) {
+                    alert("We deleted your account as requested.");
+                    document.location.href = "/user";
+                } else {
+                    alert("Sorry, we couldn't delete your account. Please try again later.");
+                }
+            })
+        }
     </script>
 </head>
 
 <body>
-    <form id="register-form">
+    <form id="profile-form">
         <fieldset>
             <legend>My Profile</legend>
-            ID : <input type="text" name="id" placeholder="ID" required /><br />
+            ID : <input type="text" name="id" required value="<%= data.id %>" readonly /><br />
             Password:
-            <input type="password" name="pw" placeholder="password" required />
-            Name: 
-            <input type="text" name="name" required />
+            <input type="text" name="pw" required value="<%= data.pw %>" /> <br>
+            Name:
+            <input type="text" name="name" value="<%= data.name %>" required />
             <div id="btns">
-                <button class="login-btn" type="button" onclick="profileUpdate()">
-                   Update
+                <button class="login-btn" type="button" onclick="editProfile()">
+                    Update
                 </button>
-                <button class="register-btn" type="button" onclick="profileDelete()">
-                Delete
-            </button>
+                <button class="register-btn" type="button" onclick="deleteProfile()">
+                    Delete
+                </button>
             </div>
-            
+
         </fieldset>
     </form>
 

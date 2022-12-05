@@ -22,5 +22,20 @@ exports.loginCheck = (req, res) => {
 };
 
 exports.profile = (req, res) => {
-  res.render("profile");
+  User.get_data(req.body.id, function (result) {
+    if (result.length > 0) res.render("profile", { data: result[0] });
+    else res.redirect("/user/login");
+  });
+};
+
+exports.profile_edit = (req, res) => {
+  User.edit_data(req.body, function () {
+    res.send(true);
+  });
+};
+
+exports.profile_delete = (req, res) => {
+  User.delete_data(req.body.id, function () {
+    res.send(true);
+  });
 };
