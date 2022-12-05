@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <title>Home</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        #btns {
+            margin-top: 20px;
+        }
+
+    </style>
+    <script>
+        
+    </script>
+</head>
+
+<body>
+    <form id="register-form">
+        <fieldset>
+            <legend>My Profile</legend>
+            ID : <input type="text" name="id" placeholder="ID" required /><br />
+            Password:
+            <input type="password" name="pw" placeholder="password" required />
+            Name: 
+            <input type="text" name="name" required />
+            <div id="btns">
+                <button class="login-btn" type="button" onclick="profileUpdate()">
+                   Update
+                </button>
+                <button class="register-btn" type="button" onclick="profileDelete()">
+                Delete
+            </button>
+            </div>
+            
+        </fieldset>
+    </form>
+
+</body>
+
+</html>

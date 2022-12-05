@@ -3,9 +3,9 @@ const mysql = require("mysql");
 
 const cnn = mysql.createConnection({
   host: "localhost",
-  user: "user",
+  user: "root",
   password: "mama5110",
-  database: "somdata",
+  database: "user",
 });
 
 exports.get_userdata = (cb) => {
