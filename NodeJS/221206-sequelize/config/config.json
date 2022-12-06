@@ -1,0 +1,16 @@
+{
+  "development": {
+    "host": "localhost",
+    "database": "somdata",
+    "username": "user",
+    "password": "mama5110",
+    "dialect": "mysql"
+  },
+  "production": {
+    "host": "localhost",
+    "database": "somdata",
+    "username": "user",
+    "password": "mama5110",
+    "dialect": "mysql"
+  }
+}

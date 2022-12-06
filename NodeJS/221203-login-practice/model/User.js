@@ -2,9 +2,9 @@ const mysql = require("mysql");
 
 const cnn = mysql.createConnection({
   host: "127.0.0.1",
-  user: "root",
-  password: "test1234",
-  database: "user",
+  user: "user",
+  password: "mama5110",
+  database: "somdata",
 });
 
 exports.signup = (data, cb) => {
@@ -43,11 +43,11 @@ exports.edit_data = (info, cb) => {
   });
 };
 
-exports.delete_data = (id, cb)=> {
-    var sql = `DELETE FROM userdata WHERE id ='${id}';`;
+exports.delete_data = (id, cb) => {
+  var sql = `DELETE FROM userdata WHERE id ='${id}';`;
 
-    cnn.query(sql, (err)=>{
-        if (err) throw err;
-        cb()
-    })
-}
+  cnn.query(sql, (err) => {
+    if (err) throw err;
+    cb();
+  });
+};
