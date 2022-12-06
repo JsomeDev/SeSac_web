@@ -4,37 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>방명록</title>
+    <title>Guestbook</title>
     <!-- Axios 사용을 위한 cdn -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/static/style.css">
-    
 </head>
 <body>
     <form id="form_register">
         <fieldset style="display: inline-block;">
-            <legend>방명록 등록</legend>
+            <legend>Guestbook</legend>
             <input type="hidden" name="id">
-            이름 : <input type="text" name="name" placeholder="사용자 이름"><br>
-            방명록 : <input type="text" name="comment" placeholder="방명록"><br>
+            <label for="userName">Name :</label>
+            <input type="text" id="userName" name="name" placeholder="Write Your Name."><br>
+            <label for="userComment">Message: </label>
+            <input type="text" id="userComment" name="comment" placeholder="Write A Message."><br>
             <div class="update-btn d-none">
-                <button class="btns" type="button" onclick="update_visitor();">수정</button>
-                <button class="btns" type="button" onclick="">취소</button>
+                <button class="btns" type="button" onclick="update_visitor();">Edit</button>
+                <button class="btns" type="button" onclick="">Delete</button>
             </div>
             <div class="register-btn">
-                <button class="btns"type="button" onclick="register();">등록</button>
+                <button class="btns"type="button" onclick="register();">Write</button>
             </div>
+            <p>Do you wanna create an account on our website?<br>
+                <a class="login-btn" type="button" href='/user'>Create an account</a>
+            </p>
+           
         </fieldset>
 	</form>
 
     <table cellspacing="0" cellpadding="10" style="margin-top: 30px;">
         <tr>
             <th>ID</th>
-            <th>작성자</th>
-            <th>방명록</th>
-            <th>수정</th>
-            <th>삭제</th>
+            <th>Name</th>
+            <th>Message</th>
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>
         <% for(let i=0; i<data.length; i++ ) { %>
             <tr>
@@ -42,8 +47,8 @@
                 <td><%=data[i].name%></td>
                 <td><%=data[i].comment%></td>
                 <td><button type="button" 
-                    onclick="update_load('<%=data[i].id%>', this);">수정</button></td>
-                <td><button type="button" onclick="delete_visitor('<%=data[i].id%>', this);">삭제</button></td>
+                    onclick="update_load('<%=data[i].id%>', this);">Edit</button></td>
+                <td><button type="button" onclick="delete_visitor('<%=data[i].id%>', this);">Delete</button></td>
             </tr>
         <% } %>
     </table>
@@ -100,7 +105,7 @@
             })
             .then((response) => {
                 if(response.data) element.parentElement.parentElement.remove();
-                else alert("알 수 없는 오류 발생");
+                else alert("Sorry, you should try again later.");
             })
         }
 
@@ -121,8 +126,8 @@
                         <td>${response.data}</td>
                         <td>${data.name}</td>
                         <td>${data.comment}</td>
-                        <td><button type="button" onclick="update_load(${response.data},this)">수정</button></td>
-                        <td><button type="button" onclick="delete_visitor(${response.data}, this)">삭제</button></td>
+                        <td><button type="button" onclick="update_load(${response.data},this)">Edit</button></td>
+                        <td><button type="button" onclick="delete_visitor(${response.data}, this)">Delete</button></td>
                     </tr>
                 `)
             })

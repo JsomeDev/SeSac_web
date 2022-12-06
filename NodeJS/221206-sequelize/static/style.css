@@ -1,35 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 body {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
 
 #register-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
 }
 
+
 input {
-    margin-top: 10px;
+    margin-top: 15px;
     height: 20px;
 }
 
 .btns {
-    margin-top: 20px;
-    padding: 7px;
+    margin: 20px;
+    padding: 3px 8px 3px 8px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .btns:hover {
-    background-color: skyblue;
+    background-color: rgb(243, 240, 195);
+    margin: 20px;
+    padding: 3px 8px 3px 8px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .d-none {
     display: none;
 }
 
-table, th, td {
+#form_register {
+    position: absolute;
+    top: 30%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+table {
     border: 1px solid black;
     margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
