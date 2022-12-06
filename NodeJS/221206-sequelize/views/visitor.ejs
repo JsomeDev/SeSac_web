@@ -8,15 +8,8 @@
     <!-- Axios 사용을 위한 cdn -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-        }
-
-        .d-none {
-            display: none;
-        } 
-    </style>
+    <link rel="stylesheet" href="/static/style.css">
+    
 </head>
 <body>
     <form id="form_register">
@@ -26,11 +19,11 @@
             이름 : <input type="text" name="name" placeholder="사용자 이름"><br>
             방명록 : <input type="text" name="comment" placeholder="방명록"><br>
             <div class="update-btn d-none">
-                <button type="button" onclick="update_visitor();">수정</button>
-                <button type="button" onclick="">취소</button>
+                <button class="btns" type="button" onclick="update_visitor();">수정</button>
+                <button class="btns" type="button" onclick="">취소</button>
             </div>
             <div class="register-btn">
-                <button type="button" onclick="register();">등록</button>
+                <button class="btns"type="button" onclick="register();">등록</button>
             </div>
         </fieldset>
 	</form>

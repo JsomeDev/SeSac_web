@@ -1,0 +1,35 @@
+body {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#register-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    margin-top: 10px;
+    height: 20px;
+}
+
+.btns {
+    margin-top: 20px;
+    padding: 7px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btns:hover {
+    background-color: skyblue;
+}
+
+.d-none {
+    display: none;
+}
+
+table, th, td {
+    border: 1px solid black;
+    margin: auto;
+}
+

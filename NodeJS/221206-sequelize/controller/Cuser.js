@@ -1,4 +1,3 @@
-// const User = require("../model/User");
 const { User } = require("../model/index");
 
 exports.main = (req, res) => {

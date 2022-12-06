@@ -10,20 +10,9 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <title>Home</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: sans-serif;
-        }
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
 
-        #btns {
-            margin-top: 20px;
-        }
-
-        .d-none {
-            display: none;
-        }
-    </style>
     <script>
         function login() {
             let form = document.getElementById
@@ -67,8 +56,8 @@
             Password:
             <input type="password" name="pw" placeholder="password" required />
 
-            <div id="btns">
-                <button class="login-btn" type="button" onclick="login()">
+            <div>
+                <button class="login-btn btns" type="button" onclick="login()">
                     Login
                 </button>
             </div>

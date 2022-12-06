@@ -10,16 +10,9 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <title>Home</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: sans-serif;
-        }
-
-        #btns {
-            margin-top: 20px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    
     <script>
         function editProfile() {
             var form = document.getElementById("profile-form");
@@ -86,11 +79,11 @@
             <input type="text" name="pw" required value="<%= data.pw %>" /> <br>
             Name:
             <input type="text" name="name" value="<%= data.name %>" required />
-            <div id="btns">
-                <button class="login-btn" type="button" onclick="editProfile()">
+            <div>
+                <button class="login-btn btns" type="button" onclick="editProfile()">
                     Update
                 </button>
-                <button class="register-btn" type="button" onclick="deleteProfile()">
+                <button class="register-btn btns" type="button" onclick="deleteProfile()">
                     Delete
                 </button>
             </div>
