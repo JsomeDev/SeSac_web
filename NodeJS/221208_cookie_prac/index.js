@@ -27,7 +27,7 @@ app.post("/popup", (req,res)=> {
   //2. 서버 응답 (헤더 변경)
   res.cookie("popup", "1", cookieOption);
   res.send(true);
-})
+});
 
 app.listen(port, function () {
   console.log("server open : ", port);
