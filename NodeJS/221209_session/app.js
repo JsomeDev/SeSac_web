@@ -17,12 +17,12 @@ app.use(
   })
 );
 
+const user = { id: "timmy", pw: "1234" };
+
 app.get("/", (req, res) => {
   if (req.session.user) res.render("main", { isLogin: true });
   else res.render("main", { isLogin: false });
 });
-
-const user = { id: "timmy", pw: "1234" };
 
 app.post("/", (req, res) => {
   if (req.body.id == user.id && req.body.pw == user.pw) {
