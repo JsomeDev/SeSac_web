@@ -32,3 +32,5 @@ db.User = require("./User")(sequelize, Sequelize);
 // }
 
 module.exports = db;
+
+
