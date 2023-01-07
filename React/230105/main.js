@@ -9,6 +9,9 @@
 
 // console.log(array === copyArr); //false
 
+///////
+//function foo(a, b, ...rest) {}
+
 const obj = {
   pororo: '뽀로로',
   lupy: '루피',
