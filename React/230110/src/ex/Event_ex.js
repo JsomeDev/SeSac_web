@@ -53,6 +53,8 @@ import { useState } from 'react';
 //   );
 // }
 
+//state변수와 관련된 태그는 다 re-rendering
+//input tag - value는 {name}이니까 다시 렌더링됨 => 등록하면 다시 빈문자열
 export default function Event_ex() {
   const [info, setInfo] = useState([
     { name: '코디', email: 'codi@gmail.com' },
@@ -67,6 +69,7 @@ export default function Event_ex() {
         type="text"
         name="name"
         placeholder="이름"
+        value={name}
         required
         onChange={(e) => {
           setName(e.target.value);
@@ -76,6 +79,7 @@ export default function Event_ex() {
         type="text"
         name="email"
         placeholder="이메일"
+        value={email}
         required
         onChange={(e) => {
           setEmail(e.target.value);
@@ -84,6 +88,8 @@ export default function Event_ex() {
       <button
         onClick={() => {
           setInfo(info.concat({ name: name, email: email }));
+          setName('');
+          setEmail('');
         }}
       >
         등록
