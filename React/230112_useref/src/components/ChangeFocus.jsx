@@ -1,0 +1,25 @@
+import React from 'react';
+import { useRef } from 'react';
+
+export default function ChangeFocus() {
+  const input1 = useRef();
+  const input2 = useRef();
+
+  const changeFocusOne = () => {
+    input1.current.focus();
+  };
+
+  const changeFocusTwo = () => {
+    input2.current.focus();
+  };
+
+  return (
+    <div>
+      <input type="text" ref={input1} />
+      <input type="text" ref={input2} />
+      <br></br>
+      <button onClick={changeFocusOne}>input1</button>
+      <button onClick={changeFocusTwo}>input2</button>
+    </div>
+  );
+}
