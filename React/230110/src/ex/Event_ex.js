@@ -63,6 +63,7 @@ export default function Event_ex() {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+
   return (
     <div>
       <input
